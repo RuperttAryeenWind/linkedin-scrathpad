@@ -13,35 +13,47 @@
 ---
 ### onyxMemberAvailability
 
-`
+```
 curli --insecure -i -H 'X-RestLi-Protocol-Version: 2.0.0' -H 'Accept:application/json' -H 'Content-Type:application/json' --fabric ei-ltx1 --dv-auth SELF --ic 'mik:' https://localhost:9443/onyx/api/onyxMemberAvailability\?cluster\=WORKBENCH
-`
+```
 
-`
+```
 curli --insecure -i -H 'X-RestLi-Protocol-Version: 2.0.0' -H 'Accept:application/json' -H 'Content-Type:application/json' --fabric ei-ltx1 --dv-auth SELF --ic 'mik:' https://localhost:9443/onyx/api/onyxMemberAvailability -X PUT --data '{ "available": true }'
-`
+```
 
 ### onyxAgent
 
-`
+```
 curli --insecure -i -H 'X-RestLi-Protocol-Version: 2.0.0' -H 'Accept:application/json' -H 'Content-Type:application/json' --fabric ei-ltx1 --dv-auth SELF --ic 'mik:' https://localhost:9443/onyx/api/onyxAgent/
-`
+```
 
 ### onyxTask
-`
+```
 curli --insecure -i -H 'X-RestLi-Protocol-Version: 2.0.0' -H 'Accept:application/json' -H 'Content-Type:application/json' --fabric ei-ltx1 --dv-auth SELF --ic 'mik:' https://localhost:9443/onyx/api/onyxTask/urn:li:ucf:(urn:li:mail:I6712672945052925952_500,urn:li:member:231148003)
-`
+```
 
 ### onyxProfile
-`
+```
 curli --insecure -i -H 'X-RestLi-Protocol-Version: 2.0.0' -H 'Accept:application/json' -H 'Content-Type:application/json' --fabric ei-ltx1 --dv-auth SELF --ic 'mik:' https://localhost:9443/onyx/api/onyxProfile/
-`
+```
 
 ### onyxContent
 
-`
-curli --insecure -i -H 'X-RestLi-Protocol-Version: 2.0.0' -H 'Accept:application/json' -H 'Content-Type:application/json' --fabric ei-ltx1 --dv-auth SELF --ic 'mik:token' https://localhost:9443/onyx/api/onyxContent/urn%3Ali%3AdigitalmediaAsset%3AC5F22AQH2m45jhEfLIAg\?viewer\=urn%3Ali%3Amember%3A24695536
-`
+```
+curli --insecure -i -H 'X-RestLi-Protocol-Version: 2.0.0' -H 'Accept:application/json' -H 'Content-Type:application/json' --fabric ei-ltx1 --dv-auth SELF --li-at-cookie '' https://localhost:9443/onyx/api/onyxTask/urn:li:reviewItem:43752606
+```
+
+### presentationConfig
+```
+curli --insecure -i -H 'X-RestLi-Protocol-Version: 2.0.0' -H 'Accept:application/json' -H 'Content-Type:application/json' --fabric ei-ltx1 --dv-auth SELF --li-at-cookie '' https://localhost:13574/onyx/api/presentationConfig/urn:li:jobPosting:2834562589
+```
+
+### Create a review Item
+
+```
+curli --insecure -i -H 'X-RestLi-Protocol-Version: 2.0.0' -H 'Accept:application/json' -H 'Content-Type:application/json' --fabric ei-ltx1 --dv-auth SELF --li-at-cookie '' https://localhost:9443/onyx/api/onyxTask/urn:li:reviewItem:-1?action=createByTarget --data-raw '{"target": "urn:li:dummy:123", "assignee": "urn:li:csUser:418005", "author": "urn:li:member:418005" , "notes":"Just testing.", "context" : { "context": { "com.linkedin.onyx.task.ReviewerContext": {  "queueId" : "SRQ" } } } }'
+
+```
 
 --------------------------------------------------------------------------------
 ## Sample Content
